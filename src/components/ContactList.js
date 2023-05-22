@@ -2,17 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ListItem } from './ContactList.styled';
 
-const ContactList = ({ searchContacts, contacts, filter }) => {
-
-  const deleteContact = (contact) => {
-    const index = contacts.indexOf(contact);
-    contacts.splice(index, 1).map(contact => (
-      <li key={contact.id}>
-        {contact.name}: {contact.number}
-        <button onClick={() => deleteContact(contact)}>Delete</button>
-      </li>
-    ));
-  };
+const ContactList = ({ searchContacts, contacts, filter, deleteContact }) => {
 
   return (
     <ul>
